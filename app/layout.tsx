@@ -11,6 +11,8 @@ import './byoc/ExampleHybridComponent'
 import './byoc/ExampleWrapperComponent'
 // Component that replaces itself on clientside
 import './byoc/ExampleSwappedComponent'
+import './byoc/ProductCard'
+import './byoc/HelloWorldComponent'
 // Place somewhere in top level, e.g. layout of the app
 FEAAS.enableNextClientsideComponents(dynamic, ExternalComponentBundle)
 
