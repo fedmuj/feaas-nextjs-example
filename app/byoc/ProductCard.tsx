@@ -9,7 +9,7 @@ const ProductCard = ({ productImage, title, subtitle, price }) => {
       <Image src={productImage} alt={title} />  
   
       <Box p="6">  
-        <Box d="flex" alignItems="baseline">  
+        <Box flex="1" alignItems="baseline">  
           <Heading as="h2" color="red" fontSize="xl">  
             {title}  
           </Heading>  
