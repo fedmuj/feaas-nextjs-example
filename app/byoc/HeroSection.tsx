@@ -18,12 +18,12 @@ const HeroSection = ({ backgroundImage, title, subtitle }) => {
         justifyContent="center"  
         alignItems="center"  
         flexDirection="column"  
-        bg={colorMode === 'dark' ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)'}  
+        bg={colorMode === 'light' ? "rgba(0, 0, 0, 0.3)" : "rgba(255, 255, 255, 0.3)"}  
       >  
-        <Heading as="h1" color={colorMode === 'dark' ? 'white' : 'black'} fontSize="5xl">  
+        <Heading as="h1" color={colorMode === 'light' ? "white" : "black"} fontSize="5xl">  
           {title}  
         </Heading>  
-        <Text as="h2" color={colorMode === 'dark' ? 'white' : 'black'} fontSize="xl">  
+        <Text as="h2" color={colorMode === 'light' ? "gray.300" : "gray.700"} fontSize="xl">  
           {subtitle}  
         </Text>  
       </Flex>  
