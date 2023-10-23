@@ -13,4 +13,6 @@ import './ExampleHybridComponent'
 import './ExampleSwappedComponent'
 // Required: A clientside for BYOC components
 // If the component needs access to context, provide it here.
+import './HelloWorldComponent'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
