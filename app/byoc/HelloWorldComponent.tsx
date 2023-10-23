@@ -24,8 +24,8 @@ export default function HelloWorldComponent(props: {
 }
 
 FEAAS.registerComponent(HelloWorldComponent, {
-  name: 'Hello World',
-  title: 'Hello World Component',
+  name: 'hybrid',
+  title: 'Hybrid server/client',
   description: 'Description of my example component',
   thumbnail: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/3997aaa0d8be4eb789f3b1541bd95c58',
   group: 'Examples',
