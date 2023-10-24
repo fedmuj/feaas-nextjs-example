@@ -17,7 +17,9 @@ import './ExampleSwappedComponent'
 import './HeroBanner'
 
 
+import './ContactForm'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
 
 
 
