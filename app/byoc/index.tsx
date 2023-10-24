@@ -15,7 +15,9 @@ import './ExampleSwappedComponent'
 // If the component needs access to context, provide it here.
 import './HeroSection'
 import './PricingPage'
+import './ImageCarousel'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
 
 
 
