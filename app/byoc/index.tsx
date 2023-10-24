@@ -18,7 +18,9 @@ import './PricingPage'
 import './ImageCarousel'
 import './DarkModeHero'
 import './FilmSchedule'
+import './ContactForm'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
 
 
 
