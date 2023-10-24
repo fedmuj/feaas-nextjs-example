@@ -16,7 +16,9 @@ import './ExampleSwappedComponent'
 import './HeroSection'
 import './PricingPage'
 import './ImageCarousel'
+import './DarkModeHero'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
 
 
 
