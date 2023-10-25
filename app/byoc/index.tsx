@@ -19,7 +19,9 @@ import './HeroBanner'
 
 import './ContactForm'
 import './HeroSection'
+import './MinimalistVideoPlayer'
 export default (props: any) => FEAAS.ExternalComponent(props)
+
 
 
 
