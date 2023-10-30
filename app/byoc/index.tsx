@@ -19,8 +19,6 @@ import './HeroBanner'
 
 import './ContactForm'
 import './HeroSection'
-import './HeroBanner2'
-import './ContactForm2'
 export default (props: any) => FEAAS.ExternalComponent(props)
 
 
