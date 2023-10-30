@@ -14,9 +14,9 @@ import {
 
 export default function ContactForm({ formTitle, ctaText }) {
   const handleSubmit = () => {
-    const email = document.getElementById('email').value;
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value;
 
     const data = {
       Email: email,
