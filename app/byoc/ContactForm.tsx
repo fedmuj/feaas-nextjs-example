@@ -1,58 +1,98 @@
-'use client';
-
 import * as FEAAS from '@sitecore-feaas/clientside/react';
-
 import {
   Box,
+  Button,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input,
-  Textarea,
-  Button,
   VStack,
-  Stack,
 } from '@chakra-ui/react';
+import React from 'react';
 
 export default function ContactForm({ formTitle, ctaText }) {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = event.target.elements.email.value;
+    const name = event.target.elements.name.value;
+    const phone = event.target.elements.phone.value;
+
+    const formData = {
+      Email: email,
+      Name: name,
+      Mobile: phone,
+    };
+
+    try {
+      const response = await fetch(
+        'https://api.sitecoresend.io/v3/subscribers/b4b8f865-d8fa-4a34-ba59-02b1d7205561/subscribe.json?apikey=90789a3a-f1ef-4798-a8b4-18c5981b03ae',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        // Handle successful form submission
+        console.log('Form submitted successfully');
+      } else {
+        // Handle form submission error
+        console.error('Failed to submit form');
+      }
+    } catch (error) {
+      // Handle form submission error
+      console.error('Failed to submit form', error);
+    }
+  };
+
   return (
     <Box
-      maxW={'lg'}
-      mx={'auto'}
-      py={4}
-      px={6}
-      bg={'gray.800'}
-      shadow={'xl'}
-      rounded={'lg'}
+      maxW={{ base: 'sm', md: 'md' }}
+      mx='auto'
+      py={8}
+      px={{ base: '4', md: '8' }}
+      bg='white'
+      borderRadius='md'
+      boxShadow='md'
     >
-      <Stack spacing={4} my={4} color={'white'}>
-        <VStack spacing={4}>
-          <Box align={'center'}>
-            <FormLabel fontSize={'xl'} fontWeight={'bold'}>
+      <form onSubmit={handleSubmit}>
+        <VStack spacing={6}>
+          <Box>
+            <FormLabel
+              htmlFor='title'
+              fontSize='2xl'
+              color='blue.500'
+              fontWeight='bold'
+            >
               {formTitle}
             </FormLabel>
           </Box>
-          <FormControl id='name'>
-            <FormLabel>Name</FormLabel>
-            <Input type='text' bg={'gray.700'} />
-          </FormControl>
-          <FormControl id='email'>
-            <FormLabel>Email Address</FormLabel>
-            <Input type='email' bg={'gray.700'} />
-          </FormControl>
-          <FormControl id='message'>
-            <FormLabel>Message</FormLabel>
-            <Textarea bg={'gray.700'} />
-          </FormControl>
+          <Box>
+            <FormLabel htmlFor='name'>Name</FormLabel>
+            <FormControl id='name' isRequired>
+              <Input type='text' name='name' />
+            </FormControl>
+          </Box>
+          <Box>
+            <FormLabel htmlFor='email'>Email</FormLabel>
+            <FormControl id='email' isRequired>
+              <Input type='email' name='email' />
+            </FormControl>
+          </Box>
+          <Box>
+            <FormLabel htmlFor='phone'>Phone</FormLabel>
+            <FormControl id='phone' isRequired>
+              <Input type='tel' name='phone' />
+            </FormControl>
+          </Box>
+          <Button type='submit' colorScheme='blue' size='lg'>
+            {ctaText}
+          </Button>
         </VStack>
-        <Button
-          bg={'blue.400'}
-          color={'white'}
-          _hover={{ bg: 'blue.500' }}
-          size={'lg'}
-        >
-          {ctaText}
-        </Button>
-      </Stack>
+      </form>
     </Box>
   );
 }
