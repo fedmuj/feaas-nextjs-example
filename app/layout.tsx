@@ -11,7 +11,6 @@ import "./byoc/ExampleHybridComponent";
 
 import "./byoc/ExampleSwappedComponent";
 
-import HeroBanner2 from "./byoc/HeroBanner2";
 
 // Place somewhere in top level, e.g. layout of the app
 FEAAS.enableNextClientsideComponents(dynamic, ExternalComponentBundle);
